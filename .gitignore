@@ -1,0 +1,7 @@
+worktimecli.egg-info
+.mypy_cache
+.pytest_cache
+.tox
+__pycache__
+*.pyc
+.DS_Store

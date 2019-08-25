@@ -1,0 +1,2 @@
+class RemoteTaskNotFound(Exception):
+    pass
