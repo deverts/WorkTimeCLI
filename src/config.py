@@ -6,8 +6,9 @@ import json
 @dataclass
 class AsanaCredentials:
     token: str
-    workspace_id: str
-    time_taken_field_id: str
+    user_id: int
+    workspace_id: int
+    time_taken_field_id: int
 
 
 APP_NAME = ".worktimecli"
@@ -27,6 +28,7 @@ with open(ASANA_CREDENTIAL_PATH, "r") as f:
 
     ASANA_CREDENTIALS = AsanaCredentials(
         asana_conf.get("token"),
+        asana_conf.get("user_id"),
         asana_conf.get("workspace_id"),
         asana_conf.get("time_taken_field_id"),
     )

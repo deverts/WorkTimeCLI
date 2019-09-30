@@ -1,4 +1,5 @@
-from typing import NoReturn
+from typing import NoReturn, List
+from datetime import datetime, timedelta
 
 from .exceptions import RemoteTaskNotFound
 from .interface import TaskTrackerInterface
@@ -54,3 +55,23 @@ class AsanaTaskTracker(TaskTrackerInterface):
                 task.time_spent = float(field["number_value"])
 
         return task
+
+    def list_tasks(self) -> List[TaskTrackerTask]:
+        client = self._get_client()
+
+        # get all tasks assigned to me. we do the completed_since call
+        # since we only want to get incomplete tasks
+        currently_assigned_tasks = client.tasks.find_by_user_task_list(
+            config.ASANA_CREDENTIALS.user_id, params={
+                "completed_since": (datetime.now() + timedelta(days=10)).strftime("%Y-%m-%dT%H:%M:%S.000")
+            }
+        )
+
+        tasks = []
+
+        for task in currently_assigned_tasks:
+            tasks.append(
+                TaskTrackerTask(task['id'], task['name'], 0.0)
+            )
+
+        return tasks

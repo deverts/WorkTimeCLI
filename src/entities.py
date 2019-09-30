@@ -10,6 +10,6 @@ class Task:
 
 @dataclass
 class TaskTrackerTask:
-    id: str
+    id: int
     name: str
     time_spent: float

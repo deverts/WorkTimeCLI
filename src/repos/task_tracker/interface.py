@@ -1,4 +1,4 @@
-from typing import NoReturn
+from typing import NoReturn, List
 from abc import ABC, abstractmethod
 
 from entities import TaskTrackerTask
@@ -11,4 +11,8 @@ class TaskTrackerInterface(ABC):
 
     @abstractmethod
     def get_task(self, task_id: str) -> TaskTrackerTask:
+        pass
+
+    @abstractmethod
+    def list_tasks(self) -> List[TaskTrackerTask]:
         pass

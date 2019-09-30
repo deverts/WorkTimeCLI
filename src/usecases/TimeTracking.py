@@ -1,4 +1,4 @@
-from typing import NoReturn
+from typing import NoReturn, List
 
 from repos.local_storage.interface import LocalStorageInterface
 from repos.task_tracker.interface import TaskTrackerInterface
@@ -21,3 +21,14 @@ class TimeTracking:
     def stop_tracking(self, task_id: str) -> NoReturn:
         time_taken = self.local_storage.stop_tracking(task_id)
         self.task_tracker.sync_time(task_id, time_taken)
+
+    def list_tasks(self) -> NoReturn:
+        tasks = self.task_tracker.list_tasks()
+
+        # output = []
+
+        for c, task in enumerate(tasks):
+            print(f"{c+1} / {len(tasks)}: {task.name} ({task.id})")
+            # output.append(f"{task.id}: {task.name}")
+
+        # return output
