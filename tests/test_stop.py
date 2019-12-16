@@ -1,10 +1,8 @@
 import pytest
 from unittest.mock import Mock
 
-from repos.local_storage.exceptions import TaskAlreadyExists, TaskDoesNotExist
+from repos.local_storage.exceptions import TaskDoesNotExist
 from repos.factories import get_local_storage
-from entities import Task
-from serializers import task_serializer
 from repos.task_tracker.exceptions import RemoteTaskNotFound
 from usecases.TimeTracking import TimeTracking
 

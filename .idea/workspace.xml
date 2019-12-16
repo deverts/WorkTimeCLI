@@ -2,19 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="75a3fe3a-bfcf-41c5-b33a-c981ea831ccc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_list.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_complete.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_read.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/WorkTimeCLI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WorkTimeCLI.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mypy.ini" beforeDir="false" afterPath="$PROJECT_DIR$/mypy.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repos/task_tracker/asana.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repos/task_tracker/asana.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repos/task_tracker/interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repos/task_tracker/interface.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/run.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/usecases/TimeTracking.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/usecases/TimeTracking.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_list.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_stop.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_stop.py" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,10 +53,16 @@
   </component>
   <component name="ProjectId" id="1P3RiwfC3yDTycWymZaxN1aa7Lo" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="NewWatcherDialog.advanced.open" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -70,19 +80,7 @@
       <recent name="$PROJECT_DIR$/src/repos" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Python.List tasks">
+  <component name="RunManager" selected="Python tests.pytest">
     <configuration name="List tasks" type="PythonConfigurationType" factoryName="Python">
       <module name="WorkTimeCLI" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -153,9 +151,9 @@
       <module name="WorkTimeCLI" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="$USER_HOME$/.virtualenvs/WorkTimeCLI/bin/python" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -169,9 +167,9 @@
       <module name="WorkTimeCLI" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="$USER_HOME$/.virtualenvs/WorkTimeCLI/bin/python" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -188,6 +186,18 @@
       <item itemvalue="Python tests.pytest" />
       <item itemvalue="Python tests.pytest w ipdb" />
     </list>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -215,7 +225,17 @@
       <workItem from="1569497911587" duration="1157000" />
       <workItem from="1569583888176" duration="56000" />
       <workItem from="1569764068524" duration="210000" />
-      <workItem from="1569840681471" duration="2394000" />
+      <workItem from="1569840681471" duration="2423000" />
+      <workItem from="1569941098402" duration="331000" />
+      <workItem from="1573553187635" duration="1468000" />
+      <workItem from="1573554996902" duration="783000" />
+      <workItem from="1574236276064" duration="320000" />
+      <workItem from="1574236624235" duration="2750000" />
+      <workItem from="1574852674037" duration="12000" />
+      <workItem from="1574947666965" duration="1525000" />
+      <workItem from="1575035548984" duration="8600000" />
+      <workItem from="1576066378919" duration="5585000" />
+      <workItem from="1576143324546" duration="3469000" />
     </task>
     <servers />
   </component>
@@ -235,15 +255,47 @@
       </map>
     </option>
   </component>
+  <component name="WindowStateProjectService">
+    <state x="150" y="-865" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576067966577">
+      <screen x="-274" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="150" y="-865" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.877/-274.-1057.1920.1057@-274.-1057.1920.1057" timestamp="1576067966577" />
+    <state width="1878" height="335" key="GridCell.Tab.0.bottom" timestamp="1576147303971">
+      <screen x="-274" y="-1057" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="335" key="GridCell.Tab.0.bottom/0.23.1440.877/-274.-1057.1920.1057@-274.-1057.1920.1057" timestamp="1576147303971" />
+    <state width="1878" height="335" key="GridCell.Tab.0.center" timestamp="1576147303970">
+      <screen x="-274" y="-1057" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="335" key="GridCell.Tab.0.center/0.23.1440.877/-274.-1057.1920.1057@-274.-1057.1920.1057" timestamp="1576147303970" />
+    <state width="1878" height="335" key="GridCell.Tab.0.left" timestamp="1576147303969">
+      <screen x="-274" y="-1057" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="335" key="GridCell.Tab.0.left/0.23.1440.877/-274.-1057.1920.1057@-274.-1057.1920.1057" timestamp="1576147303969" />
+    <state width="1878" height="335" key="GridCell.Tab.0.right" timestamp="1576147303970">
+      <screen x="-274" y="-1057" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="335" key="GridCell.Tab.0.right/0.23.1440.877/-274.-1057.1920.1057@-274.-1057.1920.1057" timestamp="1576147303970" />
+    <state x="67" y="-872" width="645" height="462" key="find.popup" timestamp="1576072450290">
+      <screen x="-274" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="67" y="-872" width="645" height="462" key="find.popup/0.23.1440.877/-274.-1057.1920.1057@-274.-1057.1920.1057" timestamp="1576072450290" />
+    <state x="351" y="-822" width="670" height="676" key="search.everywhere.popup" timestamp="1576144978098">
+      <screen x="-274" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="351" y="-822" width="670" height="676" key="search.everywhere.popup/0.23.1440.877/-274.-1057.1920.1057@-274.-1057.1920.1057" timestamp="1576144978098" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/WorkTimeCLI$pytest_for_tests_test_stop_test_stop_should_stop_tracking.coverage" NAME="pytest for tests.test_stop.test_stop_should_stop_tracking Coverage Results" MODIFIED="1565967469429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/WorkTimeCLI$List_tasks.coverage" NAME="List tasks Coverage Results" MODIFIED="1569843840911" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/WorkTimeCLI$pytest_w_ipdb.coverage" NAME="pytest w ipdb Coverage Results" MODIFIED="1566034749154" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/WorkTimeCLI$Stop_task.coverage" NAME="Stop task Coverage Results" MODIFIED="1565615489138" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/WorkTimeCLI$Start_task.coverage" NAME="Start task Coverage Results" MODIFIED="1565615460512" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/WorkTimeCLI$List_tasks.coverage" NAME="List tasks Coverage Results" MODIFIED="1574236812170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/WorkTimeCLI$pytest_for_test_start_test_start_should_throw_error_for_invalid_remote_task_id.coverage" NAME="pytest for test_start.test_start_should_throw_error_for_invalid_remote_task_id Coverage Results" MODIFIED="1565701733642" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/WorkTimeCLI$pytest_for_tests_test_stop_test_stop_should_sync_tracking_with_remote.coverage" NAME="pytest for tests.test_stop.test_stop_should_sync_tracking_with_remote Coverage Results" MODIFIED="1566032378338" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/WorkTimeCLI$pytest.coverage" NAME="pytest Coverage Results" MODIFIED="1569482920951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/WorkTimeCLI$pytest_w_ipdb.coverage" NAME="pytest w ipdb Coverage Results" MODIFIED="1576072396208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/WorkTimeCLI$pytest_for_tests_test_complete.coverage" NAME="pytest for tests.test_complete Coverage Results" MODIFIED="1576066536836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/WorkTimeCLI$pytest_for_test_start_test_start_should_start_tracking.coverage" NAME="pytest for test_start.test_start_should_start_tracking Coverage Results" MODIFIED="1569482946030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/WorkTimeCLI$Stop_task.coverage" NAME="Stop task Coverage Results" MODIFIED="1565615489138" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/WorkTimeCLI$pytest_for_tests_test_stop_test_stop_should_stop_tracking.coverage" NAME="pytest for tests.test_stop.test_stop_should_stop_tracking Coverage Results" MODIFIED="1565967469429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/WorkTimeCLI$pytest.coverage" NAME="pytest Coverage Results" MODIFIED="1576143445904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/WorkTimeCLI$pytest_for_tests_test_stop_test_stop_should_sync_tracking_with_remote.coverage" NAME="pytest for tests.test_stop.test_stop_should_sync_tracking_with_remote Coverage Results" MODIFIED="1566032378338" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/WorkTimeCLI$Start_task.coverage" NAME="Start task Coverage Results" MODIFIED="1565615460512" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/WorkTimeCLI$pytest_for_tests_test_complete_test_complete_closes_locally_running_task_if_exists.coverage" NAME="pytest for tests.test_complete.test_complete_closes_locally_running_task_if_exists Coverage Results" MODIFIED="1576067776189" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>

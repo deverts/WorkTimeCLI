@@ -14,5 +14,9 @@ class TaskTrackerInterface(ABC):
         pass
 
     @abstractmethod
+    def complete_task(self, task_id: str) -> NoReturn:
+        pass
+
+    @abstractmethod
     def list_tasks(self) -> List[TaskTrackerTask]:
         pass

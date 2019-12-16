@@ -9,7 +9,7 @@
       <excludeFolder url="file://$MODULE_DIR$/worktimecli.egg-info" />
       <excludePattern pattern="asana.py" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.7 (WorkTimeCLI)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.8 (worktimecli-py3.8)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TestRunnerService">

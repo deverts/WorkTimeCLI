@@ -1,5 +1,7 @@
 from typing import NoReturn, List
 
+from entities import TaskTrackerTask
+from repos.local_storage.exceptions import TaskDoesNotExist
 from repos.local_storage.interface import LocalStorageInterface
 from repos.task_tracker.interface import TaskTrackerInterface
 
@@ -22,13 +24,27 @@ class TimeTracking:
         time_taken = self.local_storage.stop_tracking(task_id)
         self.task_tracker.sync_time(task_id, time_taken)
 
-    def list_tasks(self) -> NoReturn:
+    def list_tasks(self) -> List[TaskTrackerTask]:
         tasks = self.task_tracker.list_tasks()
 
-        # output = []
+        return tasks
 
-        for c, task in enumerate(tasks):
-            print(f"{c+1} / {len(tasks)}: {task.name} ({task.id})")
-            # output.append(f"{task.id}: {task.name}")
+    def complete_task(self, task_id: str) -> NoReturn:
+        # check that it exists first
+        task = self.task_tracker.get_task(task_id)
 
-        # return output
+        time_taken = 0
+
+        # check if the task is being tracked locally first
+        # close it off if so.
+        try:
+            time_taken = self.local_storage.stop_tracking(task_id)
+        except TaskDoesNotExist:
+            # This means we've not been tracking time for it already
+            pass
+
+        self.task_tracker.sync_time(task_id, time_taken)
+        self.task_tracker.complete_task(task_id)
+
+    def read_task(self, task_id: str) -> TaskTrackerTask:
+        return self.task_tracker.get_task(task_id)

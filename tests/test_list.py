@@ -7,12 +7,14 @@ from usecases.TimeTracking import TimeTracking
 
 
 def test_list_tasks():
+    OUTPUT = [
+        TaskTrackerTask(id="0", name="Test 0", assigned_to="", due="", complete=False, description="", time_spent=0.0),
+        TaskTrackerTask(id="1", name="Test 1", assigned_to="", due="", complete=False, description="", time_spent=0.0),
+        TaskTrackerTask(id="2", name="Test 2", assigned_to="", due="", complete=False, description="", time_spent=0.0)
+    ]
+
     def list_tasks():
-        return [
-            TaskTrackerTask(id="0", name="Test 0", time_spent=0.0),
-            TaskTrackerTask(id="1", name="Test 1", time_spent=0.0),
-            TaskTrackerTask(id="2", name="Test 2", time_spent=0.0)
-        ]
+        return OUTPUT
 
     task_tracker = Mock()
     local_storage = get_local_storage()()
@@ -23,8 +25,5 @@ def test_list_tasks():
     output = usecase.list_tasks()
 
     assert usecase.task_tracker.list_tasks.called_once()
-    assert output == [
-        "0: Test 0",
-        "1: Test 1",
-        "2: Test 2"
-    ]
+
+    assert output == OUTPUT

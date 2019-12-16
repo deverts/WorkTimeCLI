@@ -6,9 +6,9 @@ import json
 @dataclass
 class AsanaCredentials:
     token: str
-    user_id: int
-    workspace_id: int
-    time_taken_field_id: int
+    user_id: str
+    workspace_id: str
+    time_taken_field_id: str
 
 
 APP_NAME = ".worktimecli"
