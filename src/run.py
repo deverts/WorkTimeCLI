@@ -22,6 +22,7 @@ parser.add_argument("action", help="The action you wish to complete [ start | st
 parser.add_argument("id", help="The ID used to lookup the task.", nargs="?")
 parser.add_argument("--today", help="Only used with `list` option. Will only show tasks due today.", action="store_true")
 parser.add_argument("--thisweek", help="Only used with the `list` option. Will only show tasks due this week.", action="store_true")
+parser.add_argument("--tomorrow", help="Only used with the `list` option. Will only show tasks due tomorrow.", action="store_true")
 
 args = parser.parse_args()
 
@@ -104,6 +105,9 @@ if __name__ == "__main__":
         if args.today:
             today = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
             tasks = [x for x in tasks if x.due == today]
+        elif args.tomorrow:
+            tomorrow = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0) + timedelta(days=1)
+            tasks = [x for x in tasks if x.due == tomorrow]
         elif args.thisweek:
             current_day = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
 

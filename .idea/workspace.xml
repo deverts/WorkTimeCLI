@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="75a3fe3a-bfcf-41c5-b33a-c981ea831ccc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repos/task_tracker/asana.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repos/task_tracker/asana.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_list.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -262,7 +256,7 @@
       <workItem from="1576143324546" duration="3469000" />
       <workItem from="1576506116723" duration="1813000" />
       <workItem from="1576599103814" duration="868000" />
-      <workItem from="1578055348459" duration="3404000" />
+      <workItem from="1578055348459" duration="3621000" />
     </task>
     <servers />
   </component>
