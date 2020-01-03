@@ -55,11 +55,19 @@ class AsanaTaskTracker(TaskTrackerInterface):
                 except TypeError:
                     time_spent = 0.0
 
+        due = task_dict.get("due_on", None)
+        if due:
+            try:
+                due = datetime.strptime(due, '%Y-%m-%d')
+            except ValueError:
+                pass
+
+
         task = TaskTrackerTask(
             task_dict.get("gid", None),
             task_dict.get("name", None),
             task_dict.get("assignee", {}).get("name", None),
-            task_dict.get("due_on", None),
+            due,
             task_dict.get("completed", False),
             task_dict.get("notes", None),
             time_spent

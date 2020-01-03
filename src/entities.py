@@ -22,7 +22,7 @@ class TaskTrackerTask:
     id: str
     name: str
     assigned_to: str
-    due: str
+    due: datetime
     complete: bool
     description: str
     time_spent: float

@@ -1,4 +1,5 @@
 import pytest
+from datetime import datetime
 from unittest.mock import Mock
 
 from entities import TaskTrackerTask
@@ -8,9 +9,9 @@ from usecases.TimeTracking import TimeTracking
 
 def test_list_tasks():
     OUTPUT = [
-        TaskTrackerTask(id="0", name="Test 0", assigned_to="", due="", complete=False, description="", time_spent=0.0),
-        TaskTrackerTask(id="1", name="Test 1", assigned_to="", due="", complete=False, description="", time_spent=0.0),
-        TaskTrackerTask(id="2", name="Test 2", assigned_to="", due="", complete=False, description="", time_spent=0.0)
+        TaskTrackerTask(id="0", name="Test 0", assigned_to="", due=datetime.now(), complete=False, description="", time_spent=0.0),
+        TaskTrackerTask(id="1", name="Test 1", assigned_to="", due=datetime.now(), complete=False, description="", time_spent=0.0),
+        TaskTrackerTask(id="2", name="Test 2", assigned_to="", due=datetime.now(), complete=False, description="", time_spent=0.0)
     ]
 
     def list_tasks():

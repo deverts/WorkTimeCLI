@@ -2,16 +2,18 @@
 
 import argparse
 import sys
+from typing import List
 from datetime import datetime, timedelta
 
+from entities import TaskTrackerTask
 from repos.task_tracker.exceptions import RemoteTaskNotFound
 from usecases.TimeTracking import TimeTracking
 from repos.local_storage.file import FileLocalStorage
-from repos.local_storage.exceptions import TaskDoesNotExist
+from repos.local_storage.exceptions import TaskDoesNotExist, TaskAlreadyExists
 from repos.task_tracker.asana import AsanaTaskTracker
 
 from prettytable import PrettyTable
-from termcolor import colored, cprint
+from termcolor import cprint
 
 
 parser = argparse.ArgumentParser()
@@ -24,51 +26,66 @@ parser.add_argument("--thisweek", help="Only used with the `list` option. Will o
 args = parser.parse_args()
 
 
+def pick_task_from_list(choices: List[TaskTrackerTask]) -> str:
+    for c, p in enumerate(choices):
+        print(f"{c + 1}. {p.name}")
+
+    while True:
+        choice = input("Enter which you'd like to use (or Q to quit): ")
+
+        if choice.lower() == "q":
+            print("* Quitting")
+            sys.exit(0)
+
+        try:
+            # -1 since we don't 0 index
+            selection = int(choice) - 1
+
+            if selection < 0:
+                raise ValueError
+
+            return choices[selection].id
+        except ValueError:
+            print("* Please input a valid option.")
+        except IndexError:
+            print("* Please input a valid option.")
+
+
 def find_task_from_slug(work_time: TimeTracking, slug: str) -> str:
-    print(f"* Magic find for -> {slug}")
-    tasks = work_time.list_tasks()
+    assigned_tasks = work_time.list_tasks()
 
-    potentials = []
+    matches = []
 
-    for task in tasks:
+    for task in assigned_tasks:
         if task.name.lower().startswith(slug.lower()):
-            potentials.append(task)
+            matches.append(task)
 
-    print(f"* Found {len(potentials)} matches.")
-
-    if len(potentials) == 0:
-        pass
-    elif len(potentials) == 1:
-        return potentials[0].id
+    if len(matches) == 0:
+        raise RemoteTaskNotFound
+    elif len(matches) == 1:
+        return matches[0].id
     else:
         print(f"* Too many matches found. Which would you like to use? ")
-        for c,p in enumerate(potentials):
-            print(f"{c+1}. {p.name}")
-
-        while True:
-            choice = input("Enter which you'd like to use (or Q to quit): ")
-
-            if choice.lower() == "q":
-                print("* Quitting")
-                sys.exit(0)
-
-            try:
-                return potentials[int(choice)].id
-            except TypeError:
-                print("* Please input a valid option.")
-            except IndexError:
-                print("* Please input a valid option.")
+        return pick_task_from_list(matches)
 
 
 if __name__ == "__main__":
     work_time = TimeTracking(AsanaTaskTracker(), FileLocalStorage())
 
     if args.magic:
-        args.id = find_task_from_slug(work_time, args.magic)
+        try:
+            args.id = find_task_from_slug(work_time, args.magic)
+        except RemoteTaskNotFound:
+            print("-> Task not found. Please try another slug.")
+            sys.exit(0)
 
     if args.action == "start":
-        work_time.start_tracking(args.id)
-        print(f"-> Started tracking {args.id}")
+        try:
+            work_time.start_tracking(args.id)
+            print(f"-> Started tracking {args.id}")
+        except TaskAlreadyExists:
+            print("-> Already tracking. Doing nothing.")
+
     elif args.action == "stop":
         try:
             work_time.stop_tracking(args.id)
@@ -85,45 +102,17 @@ if __name__ == "__main__":
         table.align["Due"] = "l"
 
         if args.today:
-            today = str(datetime.now().date())
-            clean_tasks = []
-
-            for task in tasks:
-                if task.due == today:
-                    clean_tasks.append(task)
-
-            tasks = clean_tasks
+            today = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
+            tasks = [x for x in tasks if x.due == today]
         elif args.thisweek:
-            current_day = datetime.now().date()
+            current_day = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
 
-            start_date = current_day
-            base_day = current_day.isoweekday()
-            valid_days = list()
-
-            # add today
-            valid_days.append(str(current_day))
-
-            while True:
-                # If we're checking on a friday
-                if base_day == 5:
-                    break
-
+            ok_dates = [current_day]
+            while current_day.isoweekday() != 5:
                 current_day = current_day + timedelta(days=1)
+                ok_dates.append(current_day)
 
-                # if it's friday or earlier, we will allow the day, Sunday is also valid
-                if current_day.isoweekday() <= 5 or current_day.isoweekday() == 7:
-                    valid_days.append(str(current_day))
-
-                # If we're on Sat (i.e. processed friday). We've looped the week
-                if current_day.isoweekday() == 6 and current_day > start_date:
-                    break
-
-            valid_tasks = []
-            for task in tasks:
-                if task.due in valid_days:
-                    valid_tasks.append(task)
-
-            tasks = valid_tasks
+            tasks = [x for x in tasks if x.due in ok_dates]
 
         [table.add_row([x.id, x.name, x.due]) for x in tasks]
 

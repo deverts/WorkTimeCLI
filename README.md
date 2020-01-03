@@ -18,6 +18,7 @@ as a tool to speed up common actions, and provide useful extra actions that the 
 - Packaging
 - Mypy
 - Writing better tests
+- Py3.8
 
 To add:
 - CircleCI
