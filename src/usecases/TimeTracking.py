@@ -48,3 +48,6 @@ class TimeTracking:
 
     def read_task(self, task_id: str) -> TaskTrackerTask:
         return self.task_tracker.get_task(task_id)
+
+    def list_tracking(self) -> List[TaskTrackerTask]:
+        return []

@@ -23,6 +23,7 @@ parser.add_argument("id", help="The ID used to lookup the task.", nargs="?")
 parser.add_argument("--today", help="Only used with `list` option. Will only show tasks due today.", action="store_true")
 parser.add_argument("--thisweek", help="Only used with the `list` option. Will only show tasks due this week.", action="store_true")
 parser.add_argument("--tomorrow", help="Only used with the `list` option. Will only show tasks due tomorrow.", action="store_true")
+parser.add_argument("--running", help="Show tasks i'm currently tracking for.", action="store_true")
 
 args = parser.parse_args()
 
@@ -139,5 +140,7 @@ if __name__ == "__main__":
     elif args.action == "complete":
         work_time.complete_task(args.id)
         print("Done!")
+    elif args.acion == "running":
+        tasks = work_time.list_tracking()
     else:
         print("Invalid command.")
